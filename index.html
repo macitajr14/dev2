@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Full-Stack | Portfolio</title>
+    
+    <!-- Tailwind CSS (Configurado para Prototipagem Rápida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Configuração de Cores Semânticas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#6366f1', // Indigo vibrante
+                        'primary-hover': '#4f46e5',
+                        dark: '#0f172a',    // Slate 900
+                        surface: '#1e293b', // Slate 800
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Ícones (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md border-b border-white/5 bg-dark/80" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-white tracking-tighter hover:text-primary transition-colors">
+                &lt;Dev/<span class="text-primary">Stack</span>&gt;
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-primary transition-colors">Sobre</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projetos</a>
+                <a href="#career" class="hover:text-primary transition-colors">Carreira</a>
+                <a href="#contact" class="px-5 py-2 rounded-full border border-white/10 hover:border-primary hover:text-primary transition-all">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20">
+        <!-- Background Glow -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 animate-fade-up">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-mono mb-2">
+                    <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+                    Disponível para novos projetos
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+                    Full-Stack <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Engineering</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-lg">
+                    Construindo aplicações web escaláveis com arquitetura limpa e experiência de usuário excepcional. Especialista em React, Node.js e Cloud.
+                </p>
+                <div class="flex gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">
+                        Ver Projetos
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-8 py-3 bg-white/5 border border-white/10 text-white rounded-lg font-medium hover:bg-white/10 transition-all flex items-center gap-2">
+                        <i class="ph ph-github-logo text-xl"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative animate-fade-in delay-200 hidden lg:block">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm">
+                    <!-- Terminal Header -->
+                    <div class="bg-surface px-4 py-3 border-b border-white/5 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-2 text-xs text-gray-500 font-mono">server.ts</span>
+                    </div>
+                    <!-- Code Content Mockup -->
+                    <div class="p-6 font-mono text-sm text-gray-300 leading-relaxed">
+                        <p><span class="text-purple-400">const</span> <span class="text-blue-400">developer</span> = {</p>
+                        <p class="pl-4">name: <span class="text-green-400">'Você'</span>,</p>
+                        <p class="pl-4">role: <span class="text-green-400">'Full-Stack Engineer'</span>,</p>
+                        <p class="pl-4">skills: [<span class="text-green-400">'React'</span>, <span class="text-green-400">'Node'</span>, <span class="text-green-400">'AWS'</span>],</p>
+                        <p class="pl-4">hardWorker: <span class="text-orange-400">true</span>,</p>
+                        <p class="pl-4">coffeeLevel: <span class="text-orange-400">Infinity</span></p>
+                        <p>};</p>
+                        <br>
+                        <p><span class="text-purple-400">function</span> <span class="text-blue-400">deploySuccess</span>() {</p>
+                        <p class="pl-4"><span class="text-purple-400">return</span> developer.createMagic();</p>
+                        <p>}</p>
+                    </div>
+                </div>
+                <!-- Abstract Image Behind Code -->
+                <div class="absolute -z-10 top-10 -right-10 w-full h-full opacity-60">
+                     <img src="assets/images/abstract-tech.jpg" alt="Abstract Tech" class="rounded-2xl" 
+                         data-prompt="abstract technological lines, dark cyber aesthetic, glowing nodes, 8k, minimalist wallpaper style" 
+                         data-aspect-ratio="1:1" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Tech Stack -->
+    <section id="about" class="py-24 bg-surface/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-white mb-4">Stack Tecnológico</h2>
+                <p class="text-gray-400">Ferramentas que utilizo para transformar ideias em código.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 reveal">
+                <!-- Tech Item -->
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-atom text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">React</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-file-ts text-4xl text-blue-600 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">TypeScript</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-database text-4xl text-green-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">Node.js</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-paint-brush text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">Tailwind</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-cloud-arrow-up text-4xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">AWS</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center hover:border-primary/50 hover:bg-white/10 transition-all group cursor-default">
+                    <i class="ph ph-git-branch text-4xl text-red-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-white">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Projetos Selecionados</h2>
+                    <p class="text-gray-400">Uma coleção de trabalhos recentes.</p>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors">
+                    Ver todos <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <article class="group rounded-2xl bg-surface border border-white/5 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg reveal">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="assets/images/project-fintech.jpg" alt="Fintech Dashboard" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            data-prompt="modern fintech dashboard ui on a laptop screen, dark mode, minimalist, data visualization, high quality" 
+                            data-aspect-ratio="16:9">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">React</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">Node.js</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Nexus Finance</h3>
+                        <p class="text-gray-400 text-sm mb-6">Dashboard financeiro com análise de dados em tempo real e integração bancária.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-sm font-medium text-white hover:text-primary flex items-center gap-1"><i class="ph ph-link"></i> Live Demo</a>
+                            <a href="#" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1"><i class="ph ph-github-logo"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="group rounded-2xl bg-surface border border-white/5 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg reveal delay-100">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="assets/images/project-ecommerce.jpg" alt="E-commerce App" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            data-prompt="minimalist e-commerce mobile app interface, fashion brand, clean ui, floating sneakers, dark background" 
+                            data-aspect-ratio="16:9">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">Next.js</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">Stripe</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Aero Store</h3>
+                        <p class="text-gray-400 text-sm mb-6">E-commerce headless de alta performance com checkout otimizado.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-sm font-medium text-white hover:text-primary flex items-center gap-1"><i class="ph ph-link"></i> Live Demo</a>
+                            <a href="#" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1"><i class="ph ph-github-logo"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="group rounded-2xl bg-surface border border-white/5 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg reveal delay-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="assets/images/project-saas.jpg" alt="SaaS Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            data-prompt="saas platform landing page on monitor, isometric view, 3d elements, productivity tool, dark blue theme" 
+                            data-aspect-ratio="16:9">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">Vue</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-white/5 text-gray-300">Firebase</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">TaskFlow SaaS</h3>
+                        <p class="text-gray-400 text-sm mb-6">Ferramenta de gestão de projetos colaborativa para times remotos.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-sm font-medium text-white hover:text-primary flex items-center gap-1"><i class="ph ph-link"></i> Live Demo</a>
+                            <a href="#" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1"><i class="ph ph-github-logo"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section id="career" class="py-24 bg-surface/30 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center reveal">Jornada Profissional</h2>
+            
+            <div class="relative border-l border-white/10 ml-4 md:ml-0 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-12 md:pl-0 md:grid md:grid-cols-5 items-start reveal">
+                    <div class="md:col-span-2 md:text-right md:pr-12 mb-2 md:mb-0">
+                        <span class="text-primary font-mono text-sm">2023 - Presente</span>
+                        <h4 class="text-white font-bold mt-1">Senior Frontend Dev</h4>
+                        <p class="text-gray-500 text-sm">TechCorp Inc.</p>
+                    </div>
+                    <div class="absolute left-[-5px] top-1 md:left-auto md:right-auto md:relative md:col-span-1 md:flex md:justify-center">
+                        <div class="w-3 h-3 rounded-full bg-primary ring-4 ring-dark"></div>
+                    </div>
+                    <div class="md:col-span-2 md:pl-12">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Liderança técnica do time de frontend, migração de legado para Next.js e implementação de Design System.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-12 md:pl-0 md:grid md:grid-cols-5 items-start reveal">
+                    <div class="md:col-span-2 md:text-right md:pr-12 mb-2 md:mb-0">
+                        <span class="text-gray-500 font-mono text-sm">2021 - 2023</span>
+                        <h4 class="text-white font-bold mt-1">Full Stack Developer</h4>
+                        <p class="text-gray-500 text-sm">Creative Agency</p>
+                    </div>
+                    <div class="absolute left-[-5px] top-1 md:left-auto md:right-auto md:relative md:col-span-1 md:flex md:justify-center">
+                        <div class="w-3 h-3 rounded-full bg-gray-600 ring-4 ring-dark"></div>
+                    </div>
+                    <div class="md:col-span-2 md:pl-12">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Desenvolvimento de e-commerces e landing pages de alta conversão utilizando React e Shopify.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-12 md:pl-0 md:grid md:grid-cols-5 items-start reveal">
+                    <div class="md:col-span-2 md:text-right md:pr-12 mb-2 md:mb-0">
+                        <span class="text-gray-500 font-mono text-sm">2019 - 2021</span>
+                        <h4 class="text-white font-bold mt-1">Junior Developer</h4>
+                        <p class="text-gray-500 text-sm">Startup X</p>
+                    </div>
+                    <div class="absolute left-[-5px] top-1 md:left-auto md:right-auto md:relative md:col-span-1 md:flex md:justify-center">
+                        <div class="w-3 h-3 rounded-full bg-gray-600 ring-4 ring-dark"></div>
+                    </div>
+                    <div class="md:col-span-2 md:pl-12">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Manutenção de APIs RESTful em Node.js e interfaces em Vue.js.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-surface/50 backdrop-blur-lg border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl reveal">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white mb-4">Vamos trabalhar juntos?</h2>
+                    <p class="text-gray-400">Tem um projeto em mente? Envie uma mensagem.</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-400">Nome</label>
+                            <input type="text" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Seu nome">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-400">Email</label>
+                            <input type="email" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="seu@email.com">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-400">Mensagem</label>
+                        <textarea rows="4" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Detalhes do projeto..."></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-primary/20">
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>&copy; <span id="year"></span> Dev Full-Stack. Design by TipoCoder.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
